@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.tjerkw</groupId>
 	<artifactId>slideexpandablelistview-project</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<packaging>pom</packaging>
 	<name>Android-SlideExpandableListView Project</name>
 
@@ -15,9 +15,8 @@
 	</modules>
 
 	<properties>
-		<androidApiLevel>4</androidApiLevel>
-		<androidVersion>1.6</androidVersion>
-		<androidApiRevision>r2</androidApiRevision>
+		<androidApiLevel>18</androidApiLevel>
+		<androidVersion>4.3</androidVersion>
 
 		<!-- build settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,7 +28,7 @@
 			<dependency>
 				<groupId>com.google.android</groupId>
 				<artifactId>android</artifactId>
-				<version>${androidVersion}_${androidApiRevision}</version>
+				<version>${androidVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 		</dependencies>
@@ -47,7 +46,7 @@
 				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.6.0</version>
 					<configuration>
 						<sdk>
 							<platform>${androidApiLevel}</platform>
@@ -88,5 +87,18 @@
 		</pluginManagement>
 		<sourceDirectory>src</sourceDirectory>
 	</build>
+	
+	<distributionManagement>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Internal Snapshots</name>
+            <url>http://build.pxoffice.de/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus</id>
+            <name>Internal Releases</name>
+            <url>http://build.pxoffice.de/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
 
 </project>
